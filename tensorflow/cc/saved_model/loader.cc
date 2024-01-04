@@ -176,7 +176,10 @@ Status RunOnce(const RunOptions& run_options,
                                                  outputs, run_metadata);
   // Be sure to call ReleaseCallable() regardless of the outcome of
   // RunCallable().
+
+
   session->ReleaseCallable(callable_handle).IgnoreError();
+
   return run_status;
 }
 
@@ -189,6 +192,7 @@ Status RunInitOp(const RunOptions& run_options, const string& export_dir,
   if (!init_op_name.empty()) {
     LOG(INFO) << "Running initialization op on SavedModel bundle at path: "
               << export_dir;
+
     std::vector<std::pair<string, Tensor>> inputs;
     AddAssetsTensorsToInputs(export_dir, asset_file_defs, &inputs);
     RunMetadata run_metadata;
@@ -204,6 +208,7 @@ Status RunRestore(const RunOptions& run_options, const string& export_dir,
                   const std::vector<AssetFileDef>& asset_file_defs,
                   Session* session) {
   LOG(INFO) << "Restoring SavedModel bundle.";
+
   // Find path to variables to be restored in export directory.
   const string variables_directory =
       io::JoinPath(export_dir, kSavedModelVariablesDirectory);
@@ -269,10 +274,31 @@ Status LoadSavedModel(const SessionOptions& session_options,
                       const RunOptions& run_options, const string& export_dir,
                       const std::unordered_set<string>& tags,
                       SavedModelBundle* const bundle) {
+
+  // SavedModelBundle legacy_bundle;
+  // SessionOptions rewritten_options(session_options);
+  // // We disallow calls to Session::Extend() on the returned session, so we can
+  // // reduce memory consumption by not storing the original GraphDef.
+  // rewritten_options.config.mutable_experimental()
+  //     ->set_optimize_for_static_graph(true);
+  // // Disallowing the `RunOptions.output_partition_graphs` option (typically used
+  // // in debugging and tests) allows us to reduce memory consumption further by
+  // // not storing the rewritten subgraph for each signature.
+  // rewritten_options.config.mutable_experimental()
+  //     ->set_disable_output_partition_graphs(true);
+  // // TODO(mrry): Consider specializing the session creation to reduce peak
+  // // RAM consumption by using `Session::Create(GraphDef&&)`.
+
+
   // TODO(robson): Add tests for the counters.
   const uint64 start_microseconds = Env::Default()->NowMicros();
+  // const Status status = LoadSavedModelInternal(session_options, run_options,
+  //                                              export_dir, tags, bundle);
   const Status status = LoadSavedModelInternal(session_options, run_options,
                                                export_dir, tags, bundle);
+  // auto bundle_mutable_signature_def = bundle->meta_graph_def.mutable_signature_def();
+  // *bundle_mutable_signature_def = std::move(*legacy_bundle.meta_graph_def.mutable_signature_def());
+
   auto log_and_count = [&](const string& status_str) {
     LOG(INFO) << "SavedModel load for tags { " << absl::StrJoin(tags, " ")
               << " }; Status: " << status_str << ": " << status << ". Took "

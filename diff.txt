@@ -1,0 +1,27 @@
+Files /home/kkq/tfflow241/tensorflow/tensorflow/cc/saved_model/loader.cc and /home/kkq/Tetris/tensorflow/tensorflow/cc/saved_model/loader.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/common_runtime/graph_execution_state.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/common_runtime/graph_execution_state.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/framework/allocator.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/framework/allocator.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/framework/allocator.h and /home/kkq/Tetris/tensorflow/tensorflow/core/framework/allocator.h differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/framework/allocator_registry.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/framework/allocator_registry.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/framework/allocator_registry.h and /home/kkq/Tetris/tensorflow/tensorflow/core/framework/allocator_registry.h differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/framework/cpu_allocator_impl.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/framework/cpu_allocator_impl.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/framework/op_kernel.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/framework/op_kernel.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/framework/op_kernel.h and /home/kkq/Tetris/tensorflow/tensorflow/core/framework/op_kernel.h differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/kernels/constant_op.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/kernels/constant_op.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/kernels/mkl/mkl_conv_ops.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/kernels/mkl/mkl_conv_ops.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/kernels/save_restore_tensor.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/kernels/save_restore_tensor.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/util/tensor_bundle/tensor_bundle.cc and /home/kkq/Tetris/tensorflow/tensorflow/core/util/tensor_bundle/tensor_bundle.cc differ
+Files /home/kkq/tfflow241/tensorflow/tensorflow/core/util/tensor_bundle/tensor_bundle.h and /home/kkq/Tetris/tensorflow/tensorflow/core/util/tensor_bundle/tensor_bundle.h differ
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/examples/ios/camera/data: labels.txt
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/examples/ios/camera: tflite_camera_example_with_select_tf_ops.xcodeproj
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/examples/ios/camera: tflite_camera_example.xcodeproj
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/examples/ios/simple/data: labels.txt
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/examples/ios/simple: simple.xcodeproj
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/experimental/delegates/coreml: BUILD
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/experimental/delegates/coreml/builders: BUILD
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/experimental/objc/apps/TestApp: TestApp.xcodeproj
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/micro/examples/network_tester: expected_output_data.h
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/micro/examples/network_tester: input_data.h
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/micro/examples/network_tester: network_model.h
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/lite/tools/benchmark/ios/TFLiteBenchmark: TFLiteBenchmark.xcodeproj
+Only in /home/kkq/tfflow241/tensorflow/tensorflow/tools/android/test: bin
