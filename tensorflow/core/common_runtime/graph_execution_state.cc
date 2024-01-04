@@ -85,7 +85,6 @@ GraphExecutionState::~GraphExecutionState() {
 #ifndef __ANDROID__
   VLOG(4) << "Graph proto is \n" << graph_def.DebugString();
 #endif  // __ANDROID__
-
   auto flib_def = absl::make_unique<FunctionLibraryDefinition>(
       OpRegistry::Global(), graph_def.library());
 
@@ -94,6 +93,7 @@ GraphExecutionState::~GraphExecutionState() {
   if (options.session_options->config.graph_options().place_pruned_graph() ||
       !options.session_options->config.experimental()
            .optimize_for_static_graph()) {
+    
     auto ret = absl::WrapUnique(new GraphExecutionState(
         absl::make_unique<GraphDef>(std::move(graph_def)), std::move(flib_def),
         options));
@@ -109,6 +109,7 @@ GraphExecutionState::~GraphExecutionState() {
     }
     *out_state = std::move(ret);
   } else {
+    
     auto ret = absl::WrapUnique(
         new GraphExecutionState(nullptr, std::move(flib_def), options));
     auto base_graph = absl::make_unique<Graph>(OpRegistry::Global());
@@ -117,6 +118,10 @@ GraphExecutionState::~GraphExecutionState() {
     TF_RETURN_IF_ERROR(ret->InitBaseGraph(std::move(base_graph)));
     *out_state = std::move(ret);
   }
+  
+  // LOG(INFO) << "flib_def_" << sizeof(*flib_def_);
+  // LOG(INFO) << "rewrite_metadata_" << sizeof(*rewrite_metadata_);
+  // LOG(INFO) << "graph_" << sizeof(*graph_);
   return Status::OK();
 }
 
